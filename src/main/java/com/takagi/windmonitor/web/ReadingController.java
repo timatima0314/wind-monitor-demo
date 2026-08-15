@@ -1,5 +1,7 @@
-package com.takagi.windmonitor;
+package com.takagi.windmonitor.web;
 
+import com.takagi.windmonitor.domain.Reading;
+import com.takagi.windmonitor.service.ReadingService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

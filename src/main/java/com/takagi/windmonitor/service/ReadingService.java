@@ -1,5 +1,7 @@
-package com.takagi.windmonitor;
+package com.takagi.windmonitor.service;
 
+import com.takagi.windmonitor.domain.Reading;
+import com.takagi.windmonitor.repository.ReadingRepository;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
