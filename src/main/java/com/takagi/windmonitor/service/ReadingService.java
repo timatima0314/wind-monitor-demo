@@ -5,7 +5,6 @@ import com.takagi.windmonitor.repository.ReadingRepository;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ThreadLocalRandom;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,14 +17,9 @@ public class ReadingService {
         this.repository = repository;
     }
 
-    /** 疑似データを作って判定し、DBに保存する */
-    public Reading generateAndSave() {
-        double windSpeed = ThreadLocalRandom.current().nextDouble(0, 30);
-        double rpm = ThreadLocalRandom.current().nextDouble(0, 20);
-        double temperature = ThreadLocalRandom.current().nextDouble(20, 100);
-
+    /** MQTT など外部から来た計測値を判定して保存する */
+    public Reading saveMeasured(double windSpeed, double rpm, double temperature) {
         String status = judge(windSpeed, temperature);
-
         Reading reading = new Reading(
                 Instant.now(),
                 windSpeed,
