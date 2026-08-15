@@ -1,4 +1,4 @@
-package com.takagi.windmonitor;
+package com.takagi.windmonitor.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

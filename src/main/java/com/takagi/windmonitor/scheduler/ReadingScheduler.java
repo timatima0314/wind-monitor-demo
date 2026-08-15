@@ -1,5 +1,7 @@
-package com.takagi.windmonitor;
+package com.takagi.windmonitor.scheduler;
 
+import com.takagi.windmonitor.domain.Reading;
+import com.takagi.windmonitor.service.ReadingService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
